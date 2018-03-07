@@ -1,5 +1,8 @@
 node_modules
 app
 libs
+package.json
+package-lock.json
+bower.json
 .bowerrc
 .DS_STORE

@@ -1,0 +1,995 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "../sass/_mixins/pixeltoem"
+@import "../sass/_mixins/transition"
+@import "../sass/_mixins/placeholder"
+@import "buttons"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	// height: 100%
+	// min-height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $regular
+	overflow-x: hidden
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+h1
+	position: relative
+	color: $title
+	font-size: em(25)
+	font-family: $regular
+h2
+	position: relative
+	font-size: em(16)
+	font-weight: 400
+h3
+	position: relative
+	font-size: em(13)
+p
+	position: relative
+	font-size: em(12)
+	color: $text_default
+	line-height: 25px
+
+a
+	color: #fff
+a:hover
+	text-decoration: none
+
+
+
+.header
+	position: fixed
+	left: 0
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 999
+	background-color: $main_bg_color
+	&:before
+		content: ''
+		width: 100%
+		height: 1px
+		background-color: $silver
+		position: absolute
+		left: 0
+		bottom: 0
+
+.custom-navbar
+	margin-bottom: 0
+	border: 0
+	background-color: transparent
+	border-radius: 0
+	min-height: 95px
+	
+	.nav
+		margin-right: 125px
+		li.active
+			a
+				color: $main_color
+				background-color: transparent
+				border-bottom: 1px solid $main_color
+				&:hover
+					background-color: transparent
+					color: $main_color
+					
+					
+		li
+			margin-right: calc(45px / 2)
+			a
+				color: #fff
+				text-transform: uppercase
+				font-size: em(13)
+				padding: 0
+				line-height: 95px
+				border-bottom: 1px solid transparent
+				@include transition(ease-out 0.4s)
+				&:hover
+					@include transition(ease-out 0.4s)
+					color: $main_color
+					border-bottom: 1px solid $main_color
+					background-color: transparent
+				&:focus
+					background-color: transparent
+		li:last-child
+			margin-right: 0
+		li + li
+			margin-right: calc(45px / 2)
+			margin-left: calc(45px / 2)
+.navbar-brand
+	padding: 30px 15px
+	line-height: 95px
+	height: auto
+
+	
+
+.after-header
+	position: relative
+	background-color: $main_bg_color
+	padding: 60px 0
+
+
+
+.overlay-search
+	opacity: 0
+	transition: opacity 200ms ease-in,height 0ms,width 0ms
+	transition-delay: 0ms,200ms,200ms
+	height: 0
+	left: 0
+	overflow: hidden
+	position: fixed
+	top: 0
+	width: 0
+	transform: scale(1.1)
+	transition: height 0ms 200ms,opacity 200ms ease-in,transform 200ms ease-in,visibility 200ms,width 0ms 200ms
+	background: #1D1E25
+	visibility: hidden
+	z-index: 4
+	cursor: pointer
+	.custom-btn
+		position: absolute
+		right: 0
+		line-height: 33px
+		background-color: transparent
+		border-color: transparent
+		top: 50%
+		@include translate(0, -50%)
+
+
+.overlay-search.focus-search
+	opacity: 0.99
+	-webkit-transition-delay: 0ms
+	transition-delay: 0ms
+	height: 100%
+	width: 100%
+	transform: scale(1)
+	transition: height 0ms 0ms,opacity 200ms ease-out,transform 200ms ease-out,visibility 0ms,width 0ms
+	visibility: visible
+	z-index: 9999
+
+
+.search-close
+	position: absolute
+	right: 40px
+	top: 40px
+	font-size: em(20)
+	color: #F4F4F4
+	cursor: pointer
+	&:hover
+		color: $main_color
+		@include transition(ease-out 0.3s)
+
+.overlay-search-form
+	width: 75%
+	position: relative
+	margin: 0 auto
+	padding: 7em 0
+	input
+		display: block
+		outline: none
+		width: 100%
+		margin: 0 auto
+		background-color: transparent
+		border: transparent
+		color: #F4F4F4
+		border: 1px solid $silver
+		padding: 10px 20px
+
+.search-button
+	line-height: 95px
+	span
+		cursor: pointer
+		color: $silver_btn
+		padding-left: 25px
+		border-left: 2px solid $silver_btn
+
+.services
+	padding: 100px 0
+	header
+		h1
+			letter-spacing: 1.2px
+			
+h1.separator
+	padding-bottom: 10px
+	margin-bottom: 10px
+	margin-top: 0
+	&:before
+		content: ''
+		position: absolute
+		left: 50%
+		@include translate(-50%, 0)
+		bottom: 0
+		width: 100px
+		height: 1px
+		background-color: $separator_color
+	&:after
+		content: ''
+		position: absolute
+		bottom: -5px
+		left: 50%
+		@include translate(-50%, 0)
+		width: 10px
+		height: 10px
+		border-radius: 50%
+		background-color: #fff
+		border: 1px solid $separator_color
+
+
+header.title
+	max-width: 420px
+	margin: 0 auto
+	p
+		font-family: $light
+		font-size: em(13)
+		margin-bottom: 25px
+			
+.services_item
+	margin-top: 70px
+	h2
+		margin: 0 0 25px
+		color: $main_color
+
+.sprite 
+	background-image: url(../img/aboutSprites.png)
+	background-repeat: no-repeat
+	display: block
+
+
+.sprite-awards 
+	width: 32px
+	height: 36px
+	background-position: -5px -5px
+
+
+.sprite-coffee 
+	width: 32px
+	height: 37px
+	background-position: -47px -5px
+
+
+.sprite-mails 
+	width: 32px
+	height: 37px
+	background-position: -89px -5px
+
+
+.sprite-projects 
+	width: 32px
+	height: 37px
+	background-position: -5px -52px
+
+.after-about-title
+	background-color: $main_bg_color
+	padding: 50px 0
+
+.about-us-item
+	padding: 25px 0 25px
+	i
+		margin-bottom: 20px
+	span
+		font-family: $bold
+		font-size: em(30)
+		color: #fff
+		letter-spacing: 1.4px
+		line-height: 1
+	p
+		line-height: 1
+		font-size: em(13)
+		color: #fff
+		margin-top: 18px
+		margin-bottom: 0
+
+.about-us-item
+	margin-top: 20px
+	background-color: #096c89
+
+footer
+	background-color: $footer_color
+	padding: 60px 0 25px
+	h2
+		display: inline-block
+		text-transform: uppercase
+		color: #fff
+		font-size: em(17)
+		font-family: $regular
+		font-weight: 400
+		letter-spacing: 1.2px
+		margin-top: 45px
+		margin-bottom: 15px
+		padding-bottom: 15px
+		padding-right: 40px
+		padding-left: 40px
+		border-bottom: 1px solid #fff
+	.social
+		a
+			display: inline-block
+			margin: 0 10px
+	.copyright
+		font-size: em(13)
+		font-family: $semi_bold
+		color: #fff
+		margin-top: 30px
+		span
+			color: $main_color
+
+
+	
+
+.out-design-comes
+	background-color: $main_bg_color
+	padding: 40px 0
+	position: relative
+	.wrap
+		background-color: rgba(3, 193, 255, 0.5)
+		position: absolute
+		right: 0
+		top: 0
+		bottom: 0
+		width: 100%
+		height: auto
+		margin: 30px 0
+
+.technology
+	padding: 15px
+	h2
+		color: #fff
+.list-technology
+	list-style-type: none
+	margin-top: 20px
+	li
+		color: #fff
+		font-size: em(14)
+		i
+			padding-right: 15px
+
+.main-slider
+	position: inherit
+.main-slider
+	.carousel-inner
+		background-color: transparent
+		margin: 30px 25px
+		width: auto
+		.item
+			background-color: transparent
+			p
+				color: #fff
+				margin-bottom: 0
+			h1
+				font-size: em(20)
+				line-height: 1.5
+				margin-top: 0
+				margin-bottom: 20px
+				color: #fff
+	.carousel-control.right,
+	.carousel-control.left
+		background-image: none
+
+
+
+
+.after-header
+	.wrap
+		background-color: rgba(3, 193, 255, 0.5)
+		position: absolute
+		right: 0
+		top: 0
+		bottom: 0
+		width: 100%
+		height: auto
+		margin: 50px 0
+.main-slider
+	.carousel-control
+		width: 40px
+		position: absolute
+		top: 50%
+		@include translate(0, -50%)
+		.fa
+			position: absolute
+			top: 50%
+			@include translate(0, -50%)
+	.left
+		.fa
+			left: 10px
+	.right
+		.fa
+			right: 10px
+	.carousel-indicators
+		margin-bottom: 5px
+		.active
+			background-color: $main_color
+			border-color: $main_color
+
+.contact-us
+	padding: 40px 0
+	
+
+
+.main-form
+	margin-top: 20px
+	.form-group
+		margin-bottom: 10px
+		input
+			border-radius: 0
+			border-color: #dfdedf
+			padding: 0 15px
+			height: 40px
+			font-size: em(13)
+			text-transform: uppercase
+			color: $form_color
+			font-family: $regular
+	textarea
+		border-radius: 0
+		border-color: #dfdedf
+		padding: 10px 15px
+		min-height: 140px
+		margin-bottom: 30px
+		text-transform: uppercase
+		color: $form_color
+		font-family: $regular
+		resize: none
+	@include placeholder()
+		color: $form_color
+		font-family: $regular
+	.custom-btn
+		padding: 0 30px
+		line-height: 3
+		float: left !important
+
+address
+	margin-bottom: 0
+	span
+		display: inline-block
+		margin-bottom: 20px
+		font-size: em(13)
+		font-family: $regular
+		color: $dark
+		text-transform: uppercase
+	a
+		display: block
+		color: $text_default
+		font-size: em(13)
+		margin-bottom: 5px
+	p
+		line-height: 1.4
+		font-size: em(13)
+		margin-bottom: 5px
+		margin-top: 0
+address + address
+	margin-top: 30px
+		
+
+.portfolio-item
+	padding: 0
+	background-color: $main_bg_color
+	img
+		height: 100%
+		object-fit: cover
+.portfolio
+	.no-gutter
+		[class*='col-']
+			padding-right: 0
+			padding-left: 0
+
+.modal-body
+	img
+		width: 100%
+.modal-title
+	display: inline-block
+.modal-header
+	.close
+		&:hover
+			color: $main_color
+.subscribe
+	padding: 50px 0
+	background-color: $main_bg_color
+	p
+		color: #fff
+		margin-bottom: 30px
+.form-subscribe
+	width: 100%
+	.form-group
+		width: 70%
+		float: left
+		position: relative
+		&:before
+			content: '\f003'
+			font-family: FontAwesome
+			font-style: normal
+			font-weight: normal
+			text-decoration: inherit
+			color: #fff
+			position: absolute
+			left: 15px
+			top: 50%
+			@include translate(0, -50%)
+		input
+			width: 100%
+			border-radius: 0
+			height: 48px
+			border: 1px solid #fff
+			background-color: transparent
+			color: #fff
+			line-height: 48px
+			padding: 0 0 0 45px
+			&:focus
+				color: #fff
+		@include placeholder()
+			text-transform: uppercase
+			color: #ffffff
+			font-size: em(13)
+	.custom-btn
+		width: 30%
+		float: left
+		border: 1px solid #ffffff
+		border-left: 0
+		height: 48px
+		font-size: em(12)
+				
+.portfolio-item
+	img
+		width: 100%
+		height: 320px
+
+.custom-tabs
+	max-width: 550px
+	margin: 70px auto 40px
+	border: none
+	li
+		margin: 0 10px
+		a
+			color: $dark
+			text-transform: uppercase
+			font-family: em(13)
+			border-radius: 0
+			border: 1px solid transparent
+			@include transition(ease-in 0.3s)
+			&:hover
+				background-color: $main_color
+				color: #fff
+				border-color: transparent
+				@include transition(ease-in 0.3s)
+	li.active
+		a
+			color: #fff
+			background-color: $main_color
+			border: 1px solid transparent
+			&:hover
+				border: 1px solid $main_color
+			&:focus
+				color: #fff
+				background-color: $main_color
+				border: 1px solid transparent
+
+.portfolio-item
+	position: relative
+	cursor: pointer
+	.inner-portfolio
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		overflow: hidden
+		border: 1px solid $silver
+		&-circle
+			display: block
+			width: 80px
+			height: 80px
+			text-align: center
+			font-size: em(30)
+			margin: 80px auto 0
+			font-weight: 300
+			font-family: $light
+			background-color: $main_color
+			line-height: 80px
+			color: #ffffff
+			border-radius: 50%
+			opacity: 0
+			@include transition(all 200ms ease-in)
+			@include scale(0.6)
+			&:hover
+				color: #fff
+		&-bottom
+			display: block
+			position: absolute
+			bottom: -50px
+			left: 0
+			width: 100%
+			background-color: #fff
+			padding: 15px
+			opacity: 0
+			@include transition(all 200ms ease-in)
+			h2
+				padding: 0
+				margin: 0
+				margin-bottom: 5px
+				font-family: $regular
+				font-size: em(17)
+			p
+				padding: 0
+				margin: 0
+				line-height: 1.2
+				color: $main_color
+		
+		.inner-portfolio-circle
+			opacity: 1
+			@include transition(all 200ms ease-in)
+			@include scale(1)
+		.inner-portfolio-bottom
+			opacity: 1
+			bottom: 0
+			@include transition(all 200ms ease-in)
+
+	
+.portfolio
+	padding: 40px 0 80px
+	.carousel-inner
+		max-width: 500px
+		margin: 0 auto
+
+.portfolio-slider
+	position: relative
+.portfolio-slider
+	.carousel-inner
+		background-color: transparent
+		.item
+			background-color: transparent
+	.carousel-control.right,
+	.carousel-control.left
+		background-image: none
+		color: $main_color
+
+.portfolio-slider
+	.carousel-control
+		width: 40px
+		position: absolute
+		top: 50%
+		@include translate(0, -50%)
+		.fa
+			position: absolute
+			top: 50%
+			@include translate(0, -50%)
+	.left
+		.fa
+			left: 20px
+	.right
+		.fa
+			right: 20px
+	.carousel-indicators
+		margin-bottom: 5px
+		bottom: -50px
+		li
+			border-color: $main_color
+		.active
+			background-color: $main_color
+			border-color: $main_color
+
+.about-us-info
+	padding: 50px 0 50px
+
+.testimonials-item
+	margin-top: 60px
+	.media
+		margin-bottom: 30px
+		margin-top: 0
+		max-width: 400px
+		margin-right: auto
+		margin-left: auto
+	.media-object
+		width: 100px
+		height: 100px
+		object-fit: cover
+	.media-body
+		padding-left: 20px
+		&-inner
+			border-bottom: 1px solid $dark
+		p
+			font-family: $light
+			color: $dark
+			margin-bottom: 0
+		span
+			display: block
+			margin: 4px 0 15px
+			font-size: em(13)
+			font-family: $light
+			font-style: italic
+			color: $text_default
+			line-height: 1
+			padding-right: 6px
+			
+
+.testimonials-slider
+	position: relative
+.testimonials-slider
+	.carousel-control
+		display: none
+	.carousel-inner
+		background-color: transparent
+		.item
+			background-color: transparent
+	.carousel-control.right,
+	.carousel-control.left
+		background-image: none
+		color: $main_color
+
+	.carousel-indicators
+		margin-bottom: 5px
+		bottom: -50px
+		li
+			border-color: $main_color
+		.active
+			background-color: $main_color
+			border-color: $main_color
+
+.testimonials
+	>h2
+		margin-bottom: 30px
+		margin-top: 0
+	>p
+		max-width: 415px
+		margin: 0 auto
+.skills
+	>p
+		max-width: 415px
+		margin: 0 auto
+	>h2
+		margin-bottom: 30px
+		margin-top: 0
+
+.testimonials
+	margin-bottom: 80px
+
+
+.tooltip
+	position: relative
+	float: right
+
+.progress
+	overflow: visible
+	margin-top: 20px
+	height: 25px
+	border-radius: 0
+	box-shadow: none
+	background-color: #dedadc
+	&-title
+		font-size: em(13)
+		font-family: $regular
+		color: $dark
+		line-height: 1
+	&-bar
+		background-color: $main_color
+		box-shadow: none
+		line-height: 25px
+
+.progress-bar-container
+	margin-top: 50px
+
+
+
+.tooltip 
+	z-index: 900
+	.tooltip-inner
+		border-radius: 0
+		font-family: $regular
+		font-size: em(13)
+
+.pricing
+	padding: 50px 0 0
+	header.title
+		p
+			margin-bottom: 0
+
+.pricing-row
+	position: relative
+	border-top: 1px solid $main_color
+	margin-top: 50px
+	max-width: 270px
+	margin-right: auto
+	margin-left: auto
+	box-shadow: 0px 0px 40px -12px rgba(0,0,0,0.75)
+	&-footer
+		padding-top: 40px
+		padding-bottom: 40px
+		.custom-btn
+			text-transform: inherit
+			background-color: #fff
+			color: $dark
+			padding: 0 35px
+			line-height: 2.7
+			font-size: em(16)
+			&:hover
+				color: #fff
+				background-color: $main_color
+	&-body
+		padding: 20px 0
+		border-bottom: 1px solid $main_color
+		ul
+			list-style-type: none
+			padding: 0
+			margin: 0
+			li
+				line-height: 1
+				font-size: em(16)
+				color: $dark
+				font-family: $regular
+				text-align: center
+				span
+					display: inline-block
+					border-bottom: 1px solid $main_color
+					padding-bottom: 20px
+					margin-bottom: 20px
+					padding-right: 10px
+					padding-left: 10px
+				&:last-child
+					span
+						border: none
+						padding-bottom: 0
+						margin-bottom: 0
+	&-header
+		border-bottom: 1px solid $main_color
+		padding: 40px 0
+		.title
+			line-height: 1
+			font-size: em(16)
+			color: $dark
+			font-family: $regular
+			font-weight: 400
+			margin-bottom: 15px
+		.price
+			position: relative
+			display: inline-block
+			padding: 0 15px
+			.amount
+				font-size: em(60)
+				font-family: $semi_bold
+				line-height: 1
+			.per
+				font-size: em(13)
+				position: absolute
+				right: -15px
+				bottom: 0
+			.currency
+				font-size: em(20)
+				position: absolute
+				left: 0
+				top: 0
+
+.special-request
+	padding-top: 40px
+	padding-bottom: 40px
+	h2
+		margin-bottom: 20px
+
+
+.quote
+	padding: 60px 0
+	background-color: #1f2021
+	font-family: $semi_bold
+	blockquote
+		color: #fff
+		max-width: 850px
+		margin: 0 auto
+		padding: 0
+		border: none
+		font-size: em(15)
+	span
+		display: inline-block
+		font-size: em(13)
+		color: #fff
+		margin-top: 20px
+		line-height: 1
+
+.modal-content
+	border-radius: 0
+
+.video-container
+	background-color: #1f2021
+	padding: 80px 0
+	margin-top: 80px
+	z-index: 0
+	.video-row
+		padding: 35px 0
+		background-color: rgba(3,193,255,.8)
+		z-index: 1
+	h2
+		font-size: em(17)
+		line-height: 1.2
+		color: #fff
+		margin-bottom: 20px
+		margin-top: 0
+	p
+		font-size: em(13)
+		line-height: 1
+		color: #fff
+		margin-top: 0
+		margin-bottom: 45px
+	.custom-btn
+		background-color: #1f2021
+		border: 2px solid #1f2021
+		padding: 0 35px
+		line-height: 2.3
+		&:focus
+			color: #fff
+		&:hover
+			background-color: transparent
+			border: 2px solid #fff
+			color: #fff
+			
+.video-container
+	position: relative
+
+.video-foreground,
+.video-container iframe 
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	pointer-events: none
+	z-index: -1
+
+.get-more-portfolio-items
+	margin-top: 40px
+	.custom-btn
+		padding: 0 60px
+		line-height: 2.4
+		font-size: em(20)
+		font-weight: $regular
+.hideItems
+	display: none
+
+.navbar-form 
+	input
+		border-radius: 0
+@import "media" 

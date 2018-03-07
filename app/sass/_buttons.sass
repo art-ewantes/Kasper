@@ -1,0 +1,20 @@
+.custom-btn
+    background-color: $main_color
+    font-size: em(13)
+    text-transform: uppercase
+    color: #fff
+    @include transition(ease-out 0.4s)
+    border: 1px solid $main_color
+    border-radius: 0
+    font-family: $regular
+    font-weight: 400
+    &:hover
+        @include transition(ease-out 0.4s)
+        background-color: #fff
+        border: 1px solid $main_color
+        border-radius: 0
+        color: $main_color
+    &:focus
+        color: #000
+    // &:visited
+    //     color: #000

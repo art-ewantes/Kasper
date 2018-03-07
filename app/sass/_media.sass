@@ -1,0 +1,335 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+	.custom-navbar
+		.nav
+			margin-right: 10px
+	.custom-navbar 
+		.nav 
+			li+li
+				margin-right: calc(20px / 2)
+				margin-left: calc(20px / 2)
+			li
+				margin-right: calc(20px / 2)
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+
+	.portfolio 
+		.carousel-inner
+			max-width: 400px
+	
+	.fixed-line
+		height: 66px
+	.navbar-toggle
+		margin-top: 16px
+	
+	.custom-navbar 
+		min-height: 60px
+		.nav 
+			li
+				margin: 0
+				padding: 0 15px
+				a
+					line-height: 40px
+					&:hover
+						color: #fff
+						border-bottom: 1px solid transparent
+			li + li
+				margin: 0
+	.custom-navbar
+		.custom-toggle
+			border-color: $main_color
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited
+				background-color: transparent
+			
+			.icon-bar
+				background-color: $main_color
+	.navbar-brand
+		padding: 15px
+	.custom-navbar
+		.navbar-collapse
+			border-color: transparent
+	.services_item 
+		margin-top: 30px
+		h2
+			font-size: em(17)
+			margin-bottom: 10px
+			margin-top: 10px
+	.services
+		padding: 40px 0
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+	.fa-3x
+		font-size: 2em
+	.carousel-control
+		display: none
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+	.portfolio 
+		.carousel-inner
+			max-width: 300px
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+	.about-us
+		padding: 100px 0 0
+		header
+			p
+				margin-bottom: 100px
+	.fixed-line
+		height: 96px
+		width: 100%
+		z-index: 5
+	.carousel-indicators
+		bottom: 10px
+	
+	
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+	h1
+		font-size: em(30)
+	h2
+		font-size: em(20)
+	h3
+		font-size: em(16)
+	p
+		font-size: em(13)
+		line-height: 25px
+	h1.separator
+		padding-bottom: 25px
+		margin-bottom: 25px
+	.what-we-done
+		background-color: #096c89
+	.after-about-title
+		padding: 100px 0 90px
+	footer
+		padding: 120px 0 35px
+		h2
+			font-size: em(20)
+		.copyright
+			margin-top: 85px
+			font-size: em(15)
+	.about-us-item
+		padding: 25px 0 44px
+		span
+			font-size: em(50)
+	.out-design-comes
+		padding: 95px 0
+		overflow: hidden
+		img
+			margin-bottom: -152px
+		.wrap
+			background-color: rgba(3, 193, 255, 0.5)
+			position: absolute
+			right: 0
+			top: 0
+			bottom: 0
+			width: 50%
+			height: auto
+			margin: 95px 0
+
+	.technology
+		padding: 45px 65px 40px
+		h2
+			margin-bottom: 55px
+			margin-top: 0
+	.list-technology 
+		li
+			font-size: em(16)
+			margin-bottom: 20px
+			line-height: 1
+			i
+				padding-right: 30px
+	.after-header
+		position: relative
+		background-color: $main_bg_color
+		padding: 185px 0
+		.wrap
+			background-color: rgba(3, 193, 255, 0.5)
+			position: absolute
+			left: 0
+			top: 0
+			bottom: 0
+			width: 60%
+			height: auto
+			margin: 185px 0
+	.main-slider
+		.carousel-inner
+			width: 50%
+			margin: 65px 75px
+			.item
+				p
+					max-width: 480px
+				h1
+					font-size: em(30)
+					margin-bottom: 40px
+	.contact-us
+		padding: 100px 0
+		.title
+			margin-bottom: 100px
+			p
+				margin-bottom: 0
+
+	.main-form
+		margin-top: 0
+		.form-group
+			margin-bottom: 30px
+			input
+				height: 60px
+				padding: 0 25px
+		.custom-btn
+			float: right !important
+			padding: 0 55px
+			line-height: 4
+		textarea
+			padding: 25px
+			min-height: 200px
+	address + address
+		margin-top: 80px
+	address
+		span
+			margin-bottom: 35px
+	.portfolio
+		padding: 100px 0 0
+	
+	
+	.subscribe
+		padding: 100px 0
+		p
+			margin-bottom: 0
+
+	.form-subscribe
+		.form-group
+			width: 80%
+			&:before
+				left: 25px
+			input
+				height: 58px
+				line-height: 58px
+				padding: 0 0 0 65px
+		.custom-btn
+			width: 20%
+			height: 58px
+			font-size: em(13)
+	.portfolio-item
+		.inner-portfolio
+			border: none
+			.inner-portfolio-circle
+				opacity: 0
+				width: 120px
+				height: 120px
+				line-height: 120px
+				font-size: em(50)
+				margin: 50px auto 0
+				@include transition(all 200ms ease-in)
+				@include scale(0.6)
+			.inner-portfolio-bottom
+				opacity: 0
+				padding: 28px
+				bottom: -20
+				@include transition(all 200ms ease-in)
+				h2
+					font-size: em(20)
+
+			&:hover
+				.inner-portfolio-circle
+					opacity: 1
+					@include transition(all 200ms ease-in)
+					@include scale(1)
+				.inner-portfolio-bottom
+					opacity: 1
+					bottom: 0
+					@include transition(all 200ms ease-in)
+	
+	.about-us-info
+		padding: 100px 0 50px
+	.testimonials
+		margin-bottom: 0
+	.testimonials-item
+		.media
+			max-width: 100%
+		.media-body
+			padding-left: 60px
+			max-width: 320px
+			margin: 0 auto
+
+	.pricing-row
+		margin-top: 100px
+
+	.pricing
+		padding: 100px 0 0
+	.special-request
+		padding-top: 40px
+		padding-bottom: 100px
+		h2
+			margin-bottom: 40px
+		.custom-btn
+			text-transform: inherit
+			padding: 0 45px
+			line-height: 2.7
+			font-size: em(16)
+
+	.pricing-row
+		@include transition(all 200ms ease-in)
+		@include scale(1)
+		box-shadow: none
+		&:hover
+			@include transition(all 200ms ease-in)
+			@include scale(1.1)
+			box-shadow: 0px 0px 40px -12px rgba(0,0,0,0.75)
+	.quote
+		padding: 120px 0
+		blockquote
+			font-size: em(25)
+	.video-container
+		padding: 180px 0
+		margin-top: 90px
+		.video-row
+			padding: 50px 0
+		h2
+			font-size: em(25)
+			margin-bottom: 40px
+	
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
+

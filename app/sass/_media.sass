@@ -24,11 +24,20 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	/**/
-
+	h1
+		font-size: em(20)
+	p
+		font-size: em(13)
+	h2
+		font-size: em(16)
 	.portfolio 
 		.carousel-inner
 			max-width: 400px
-	
+	.services_item 
+		h2
+			text-align: center
+		p
+			text-align: center
 	.fixed-line
 		height: 66px
 	.navbar-toggle
@@ -71,8 +80,35 @@
 			margin-top: 10px
 	.services
 		padding: 40px 0
-
-
+	.pricing-row-header 
+		padding: 20px 0
+		.price 
+			.amount
+				font-size: em(40)
+		.title
+			font-size: em(13)
+	.pricing-row-footer
+		padding: 20px 0
+		.custom-btn
+			padding: 0 15px
+			font-size: em(13)
+	.pricing-row-body 
+		ul 
+			li
+				font-size: em(13)
+				span
+	footer
+		padding: 30px 0 20px
+		h2
+			font-size: em(14)
+	.main-form 
+		.custom-btn
+			padding: 0 15px
+		.form-group
+			input
+				font-size: em(12)
+		textarea
+			font-size: em(12)
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	/**/
@@ -80,15 +116,28 @@
 		font-size: 2em
 	.carousel-control
 		display: none
-
-
+	.about-us-item 
+		span
+			font-size: em(16)
+		p
+			font-size: em(11)
+	.pricing-row-header 
+		padding: 20px 0
+		.price 
+			.amount
+				font-size: em(30)
+	
+@media only screen and (max-width : 360px)
+	.pricing-container
+		.col-xs-6
+			width: 100%
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
 	.portfolio 
 		.carousel-inner
 			max-width: 300px
-
+	
 
 /*==========  Mobile First  ==========*/
 

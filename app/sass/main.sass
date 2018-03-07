@@ -231,6 +231,10 @@ a:hover
 		color: $silver_btn
 		padding-left: 25px
 		border-left: 2px solid $silver_btn
+		@include transition(ease-out 0.4s)
+		&:hover
+			color: $main_color
+			@include transition(ease-out 0.4s)
 
 .services
 	padding: 100px 0
